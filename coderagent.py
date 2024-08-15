@@ -164,7 +164,18 @@ result_folder = os.path.join(os.getcwd(), 'result')
 os.makedirs(result_folder, exist_ok=True)
 
 # Define the full path where the code file will be saved
-filename = os.path.join(result_folder, f"{project_name}_{str(random.randint(1, 10))}.py")
+postfix={
+    'python':'.py',
+    'java':'.java',
+    'c++':'.cpp',
+    'c#':'.cs',
+    'javascript':'.js',
+    'typescript':'.ts',
+    'go':'.go',
+    'swift':'.swift',
+    'php':'.php',
+}
+filename = os.path.join(result_folder, f"{project_name}_{str(random.randint(1, 10))}{postfix[code_language.lower()]}")
 
 # Write the code to the .py file in the 'result' folder
 with open(filename, "w") as file:
